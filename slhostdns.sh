@@ -10,10 +10,10 @@ rm nsdomain
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-x0-9 | head -c5)
 DOMAIN=mantapxsl.my.id
-SUB_DOMAIN=onichan-${sub}.mantapxsl.my.id
-NS_DOMAIN=slowdns-${subsl}.mantapxsl.my.id
-CF_ID=slinfinity69@gmail.com
-CF_KEY=dd2c5e0313f122b3c1833471d469b1025f492
+SUB_DOMAIN=onichan-${sub}.tcat.ml
+NS_DOMAIN=slowdns-${subsl}.tcat.ml
+CF_ID=tunnelcatvpn@gmail.com
+CF_KEY=9a06385414dab77d7d34e6d66927e4eae2fbe
 echo "IP=""$SUB_DOMAIN" >> /var/lib/crot/subdomain.conf
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);

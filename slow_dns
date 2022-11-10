@@ -93,15 +93,15 @@ initslow() {
             sleep 1.5
             initslow
         }
-        echo -e "\n${RED}[${CYAN}1${RED}] ${YELLOW}SLOWDNS SSH${SCOLOR}"
+        echo -e "\n${RED}[${CYAN}1${RED}] ${YELLOW}SLOWDNS XRAY${SCOLOR}"
         echo -e "${RED}[${CYAN}2${RED}] ${YELLOW}SLOWDNS XRAY${SCOLOR}"
-        echo -e "${RED}[${CYAN}3${RED}] ${YELLOW}SLOWDNS SSLH${SCOLOR}"
+        echo -e "${RED}[${CYAN}3${RED}] ${YELLOW}SLOWDNS TROJAN${SCOLOR}"
         echo -e "${RED}[${CYAN}4${RED}] ${YELLOW}SLOWDNS OPENVPN${SCOLOR}"
         echo -e "${RED}[${CYAN}0${RED}] ${YELLOW}VOLTAR${SCOLOR}"
         echo -ne "\n${GREEN}INFORME UMA OPCAO${SCOLOR}: "
         read opcc
         if [[ "$opcc" == '1' ]]; then
-            ptdns='22'
+            ptdns='443'
         elif [[ "$opcc" == '2' ]]; then
             ptdns=$(netstat -nplt | grep 'xray' | awk {'print $4'} | cut -d: -f2)
             [[ $ptdns == '' ]] && {
@@ -112,13 +112,13 @@ initslow() {
         elif [[ "$opcc" == '3' ]]; then
             ptdns=$(netstat -nplt | grep 'trojan' | awk {'print $4'} | cut -d: -f2)
             [[ $ptdns == '' ]] && {
-                echo -e "\n${RED}PRIMEIRO INSTALE O SSLH !${SCOLOR}"
+                echo -e "\n${RED}PRIMEIRO INSTALE O TROJAN !${SCOLOR}"
                 sleep 1.5
                 initslow
             }
         elif [[ "$opcc" == '4' ]]; then
             [[ ! -e /etc/xray/config.json ]] && {
-                echo -e "\n${RED}PRIMEIRO INSTALE O OPENVPN !${SCOLOR}"
+                echo -e "\n${RED}PRIMEIRO INSTALE O XRAY !${SCOLOR}"
                 sleep 1.5
                 initslow
             } || {

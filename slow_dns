@@ -94,7 +94,7 @@ initslow() {
             initslow
         }
         echo -e "\n${RED}[${CYAN}1${RED}] ${YELLOW}SLOWDNS SSH${SCOLOR}"
-        echo -e "${RED}[${CYAN}2${RED}] ${YELLOW}SLOWDNS SSL${SCOLOR}"
+        echo -e "${RED}[${CYAN}2${RED}] ${YELLOW}SLOWDNS XRAY${SCOLOR}"
         echo -e "${RED}[${CYAN}3${RED}] ${YELLOW}SLOWDNS SSLH${SCOLOR}"
         echo -e "${RED}[${CYAN}4${RED}] ${YELLOW}SLOWDNS OPENVPN${SCOLOR}"
         echo -e "${RED}[${CYAN}0${RED}] ${YELLOW}VOLTAR${SCOLOR}"
@@ -117,12 +117,12 @@ initslow() {
                 initslow
             }
         elif [[ "$opcc" == '4' ]]; then
-            [[ ! -e /etc/openvpn/server.conf ]] && {
+            [[ ! -e /etc/xray/config.json ]] && {
                 echo -e "\n${RED}PRIMEIRO INSTALE O OPENVPN !${SCOLOR}"
                 sleep 1.5
                 initslow
             } || {
-                ptdns=$(sed -n 1p /etc/openvpn/server.conf| cut -d' ' -f2)
+                ptdns=$(sed -n 1p /etc/xray/config.json| cut -d' ' -f2)
             }
         elif [[ "$opcc" == '0' ]]; then
             sleep 1.5

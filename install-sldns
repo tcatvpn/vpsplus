@@ -2,8 +2,7 @@
 # Script By SL
 # 2022 SLOWDNS
 # ===============================================
-wget https://raw.githubusercontent.com/tcatvpn/vpsplus/main/slhostdns.sh && chmod +x slhostdns.sh && ./slhostdns.sh
-nameserver=$(cat /root/nsdomain)
+
 apt update -y
 apt install -y python3 python3-dnslib net-tools
 apt install ncurses-utils -y
